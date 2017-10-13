@@ -51,7 +51,14 @@ docker build -t comevizz-doc --build-arg http_proxy=$http_proxy --build-arg http
 docker run --rm -v $PWD/gitbook:/srv/gitbook -p 4000:4000 comevizz-doc serve
 ```
 
+### Building HTML documents
+
+```
+docker run --rm -v $PWD/gitbook:/srv/gitbook comevizz-doc build
+```
+
 ### Generating PDF documents
+
 ```
 docker run --rm -v $PWD/gitbook:/srv/gitbook comevizz-doc pdf
 ```
