@@ -31,6 +31,7 @@ hub add .
 hub commit -m "update gitbook html"
 
 # TODO: change branch name to unique
+git remote set-url origin https://${GH_USER}:${GH_ACCESS_TOKEN}@github.com/ysknmt/COMEVIZZ.git
 hub push origin "gitbook"
 # TODO: Include original pull request number in message If we could
 hub pull-request -m "Generate HTML documents"
