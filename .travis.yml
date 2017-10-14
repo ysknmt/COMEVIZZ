@@ -6,12 +6,8 @@ branches:
     - gh-pages
     - /.*/
 
-isntall:
-  - npm install -g gitbook-cli
+install: npm install -g gitbook-cli
 
-script:
-  - cd gitbook
-  - gitbook install 
-  - cd ..
+script: ./generate-html.sh
 
 after_success: ./open-pr.sh
