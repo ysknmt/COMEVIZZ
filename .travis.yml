@@ -1,12 +1,12 @@
 language: node_js
 node_js: node
 
-isntall:
-  - npm install -g gitbook-cli
+branches:
+  only:
+    - gh-pages
 
-script:
-  - cd gitbook
-  - gitbook install 
-  - cd ..
+install: npm install -g gitbook-cli
+
+script: ./generate-html.sh
 
 after_success: ./open-pr.sh

@@ -17,13 +17,17 @@ git config --global core.autocrlf "input"
 git config --global hub.protocol "https"
 git config --global credential.helper "store --file=$HOME/config/git-credential"
 
-curl -LO "https://github.com/github/hub/releases/download/v$HUB/hub-linux-amd64-$HUB.tar.gz"
-tar -C "$HOME" -zxf "hub-linux-amd64-$HUB"
+curl -LO "https://github.com/github/hub/releases/download/v$HUB/hub-linux-amd64-$HUB.tgz"
+tar -C "$HOME" -zxf "hub-linux-amd64-$HUB.tgz"
+export PATH="$PATH:$HOME/hub-linux-amd64-$HUB/bin"
 
 hub clone "ysknmt/COMEVIZZ" _
 cd _
 # TODO: change branch name to unique
-hub checkout -b "gitbook"
+hub checkout -b "gitbook" remotes/origin/gh-pages
+
+./generate-html.sh
+
 hub add .
 hub commit -m "update gitbook html"
 
