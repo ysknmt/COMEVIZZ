@@ -3,7 +3,8 @@ node_js: node
 
 branches:
   only:
-    - gh-pages-travis
+    - gh-pages
+    - /.*/
 
 isntall:
   - npm install -g gitbook-cli
