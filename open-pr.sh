@@ -4,7 +4,7 @@ HUB="2.2.9"
 
 mkdir -p "$HOME/.config"
 set +x
-echo "https://${GH_ACCESS_TOKEN}:@github.com" > "$HOME/.config/git-credential"
+echo "https://${GH_USER}:${GH_ACCESS_TOKEN}@github.com" > "$HOME/.config/git-credential"
 echo "github.com:
 - oauth_token: $GH_ACCESS_TOKEN
   user: $GH_USER" > "$HOME/.config/hub"
