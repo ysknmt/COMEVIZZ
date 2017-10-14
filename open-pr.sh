@@ -17,7 +17,7 @@ git config --global core.autocrlf "input"
 git config --global hub.protocol "https"
 git config --global credential.helper "store --file=$HOME/config/git-credential"
 
-curl -LO "https://github.com/github/hub/releases/download/v$HUB/hub-linux-amd64-$HUB.tar.gz"
+curl -LO "https://github.com/github/hub/releases/download/v$HUB/hub-linux-amd64-$HUB.tgz"
 tar -C "$HOME" -zxf "hub-linux-amd64-$HUB"
 
 hub clone "ysknmt/COMEVIZZ" _
