@@ -25,6 +25,9 @@ hub clone "ysknmt/COMEVIZZ" _
 cd _
 # TODO: change branch name to unique
 hub checkout -b "gitbook"
+
+./generate-html.sh
+
 hub add .
 hub commit -m "update gitbook html"
 
