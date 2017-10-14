@@ -24,7 +24,7 @@ tar -C "$HOME" -zxf "hub-linux-amd64-$HUB.tgz"
 export PATH="$PATH:$HOME/hub-linux-amd64-$HUB/bin"
 
 # TODO: change branch name to unique
-hub checkout -b "gitbook" remotes/origin/gh-pages
+hub checkout -b "gitbook" # remotes/origin/gh-pages
 
 ./generate-html.sh
 
