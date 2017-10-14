@@ -4,8 +4,7 @@ HUB="2.2.9"
 
 mkdir -p "$HOME/.config"
 set +x
-git config credential.helper "store --file=.git/credentials"
-echo "https://${GH_ACCESS_TOKEN}:@github.com" > ".git/credentials"
+echo "https://${GH_ACCESS_TOKEN}:@github.com" > "$HOME/.config/git-credential"
 echo "github.com:
 - protocol: https
   oauth_token: $GH_ACCESS_TOKEN
@@ -18,11 +17,12 @@ git config --global user.name "${GH_USER}"
 git config --global user.email "${GH_USER}@users.noreply.github.com"
 git config --global core.autocrlf "input"
 git config --global hub.protocol "https"
-git config --global credential.helper "store --file=$HOME/config/git-credential"
+git config --global credential.helper "store --file=$HOME/.config/git-credential"
 
 curl -LO "https://github.com/github/hub/releases/download/v$HUB/hub-linux-amd64-$HUB.tgz"
 tar -C "$HOME" -zxf "hub-linux-amd64-$HUB.tgz"
 export PATH="$PATH:$HOME/hub-linux-amd64-$HUB/bin"
+rm hub-linux-amd64-$HUB.tgz
 
 # TODO: change branch name to unique
 hub checkout -b "gitbook" # remotes/origin/gh-pages
