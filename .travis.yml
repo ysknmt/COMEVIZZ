@@ -7,6 +7,8 @@ branches:
 
 install: npm install -g gitbook-cli
 
-script: ./generate-html.sh
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./generate-html.sh; fi'
 
-after_success: ./open-pr.sh
+after_success:
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./open-pr.sh; fi'
