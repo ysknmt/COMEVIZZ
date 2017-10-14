@@ -24,7 +24,7 @@ export PATH="$PATH:$HOME/hub-linux-amd64-$HUB/bin"
 hub clone "ysknmt/COMEVIZZ" _
 cd _
 # TODO: change branch name to unique
-hub checkout -b "gitbook"
+hub checkout -b "gitbook" remotes/origin/gh-pages
 
 ./generate-html.sh
 

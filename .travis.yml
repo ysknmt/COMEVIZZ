@@ -4,7 +4,6 @@ node_js: node
 branches:
   only:
     - gh-pages
-    - /.*/
 
 install: npm install -g gitbook-cli
 
