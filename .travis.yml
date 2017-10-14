@@ -1,0 +1,16 @@
+language: node_js
+node_js: node
+
+branches:
+  only:
+    "/^gh-pages.+/"
+
+isntall:
+  - npm install -g gitbook-cli
+
+script:
+  - cd gitbook
+  - gitbook install 
+  - cd ..
+
+after_success: ./open-pr.sh
