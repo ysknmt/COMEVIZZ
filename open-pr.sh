@@ -36,5 +36,5 @@ hub commit -m "update gitbook html"
 hub push origin "gitbook"
 # git push -u origin gitbook
 # TODO: Include original pull request number in message If we could
-hub pull-request -m "Generate HTML documents" -b gh-pages
+hub pull-request -m "[ci skip] Generate HTML documents" -b gh-pages
 cd ..
