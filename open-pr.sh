@@ -13,7 +13,7 @@ set -x
 
 git config --global user.name "${GH_USER}"
 git config --global user.email "${GH_USER}@users.noreply.github.com"
-git config --global core.autocrlf "inpu"
+git config --global core.autocrlf "input"
 git config --global hub.protocol "https"
 git config --global credential.helper "store --file=$HOME/config/git-credential"
 
