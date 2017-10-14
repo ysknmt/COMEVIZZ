@@ -4,12 +4,13 @@ HUB="2.2.9"
 
 mkdir -p "$HOME/.config"
 set +x
-echo "https://${GH_ACCESS_TOKEN}:@github.com" > "$HOME/.config/git-credential"
+git config credential.helper "store --file=.git/credentials"
+echo "https://${GH_ACCESS_TOKEN}:@github.com" > ".git/credentials"
 echo "github.com:
 - protocol: https
   oauth_token: $GH_ACCESS_TOKEN
   user: $GH_USER" > "$HOME/.config/hub"
-git remote set-url origin https://${GH_USER}:${GH_ACCESS_TOKEN}@github.com/ysknmt/COMEVIZZ.git
+# git remote set-url origin https://${GH_USER}:${GH_ACCESS_TOKEN}@github.com/ysknmt/COMEVIZZ.git
 unset GH_ACCESS_TOKEN
 set -x
 
