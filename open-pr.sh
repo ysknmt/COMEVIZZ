@@ -33,7 +33,8 @@ hub add .
 hub commit -m "update gitbook html"
 
 # TODO: change branch name to unique
-hub push origin "gitbook"
+# hub push origin "gitbook"
+git push -u origin gitbook
 # TODO: Include original pull request number in message If we could
 hub pull-request -m "Generate HTML documents" -h gh-pages
 cd ..
