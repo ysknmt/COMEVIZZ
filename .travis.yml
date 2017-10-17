@@ -1,0 +1,18 @@
+language: node_js
+node_js: node
+
+branches:
+  only:
+    - gh-pages
+
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
+
+install: npm install -g gitbook-cli
+
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash "cd gitbook/ && ../generate-html.sh build && cd ../; fi'
+
+after_success:
+  - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./open-pr.sh; fi'
